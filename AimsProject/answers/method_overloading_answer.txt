@@ -1,0 +1,8 @@
+Câu 1 : Chuyện gì xảy ra khi thêm phương thức addDVD (DigitalVideoDisc... discs) :
+- Trình biên dịch Java sẽ báo lỗi xung đột : "Duplicate method addDVD(DigitalVideoDisc[]) in type Cart"
+- Lỗi xảy ra vì Java coi Varargs (DigitalVideoDisc...) và mảng (DigitalVideoDisc[]) là tương đương nhau khi nạp chồng phương thức (method overloading). 
+Trình biên dịch không thể quyết định gọi phương thức nào nếu người dùng truyền một mảng DigitalVideoDisc[] vào .
+
+Câu 2 : Bạn lựa chọn phương án nào để giải quyết vấn đề này ?
+- Xóa phương thức addDVD(DigitalVideoDisc[] discs) và giữ lại phương thức addDVD(DigitalVideoDisc... disc).
+- Lý do : Do Varargs linh hoạt hơn , có thể nhập mảng hay danh sách đối tượng riêng lẻ cách nhau bằng dấu phẩy , nó hiện đại và sẽ có nhiều ứng dụng hơn .
