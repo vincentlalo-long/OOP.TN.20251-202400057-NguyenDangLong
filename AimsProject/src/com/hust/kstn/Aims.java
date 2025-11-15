@@ -74,12 +74,19 @@ public class Aims {
 		//cart.removeDVD(dvd_1);
 		
 		//Test hàm thêm 2 đĩa 
-		cart.addDVD(dvd_16, dvd_17);
-		cart.print();
+		//cart.addDVD(dvd_16, dvd_17);
+		//cart.print();
 		
 		//Test hàm thêm một mảng hoặc các danh sách đĩa 
-		cart.addDVD(dvd_15,dvd_18,dvd_19,dvd_20);
-		cart.print();
+		//cart.addDVD(dvd_15,dvd_18,dvd_19,dvd_20);
+		//cart.print();
+		 
+		// Hàm test biến classifier , instance member quản lý id
+		System.out.println("Total number of DVDs: " + DigitalVideoDisc.getNbDigitalVideoDiscs());
+
+        System.out.println("DVD1 ID: " + dvd_1.getId());
+        System.out.println("DVD2 ID: " + dvd_2.getId());
+        System.out.println("DVD3 ID: " + dvd_8.getId());
 	}
 
 }
