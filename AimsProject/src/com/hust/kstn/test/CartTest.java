@@ -22,6 +22,9 @@ public class CartTest {
 		cart.removeDVD(dvd_1);
 		cart.print();
 		
+		cart.removeDVD(dvd_6);
+		cart.print();
+		
 		cart.addDVD(dvd_4,dvd_5,dvd_6);
 		cart.print();
 		
