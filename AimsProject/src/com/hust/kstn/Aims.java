@@ -1,5 +1,6 @@
 package com.hust.kstn;
-
+import com.hust.kstn.models.Cart; 
+import com.hust.kstn.models.DigitalVideoDisc;
 public class Aims {
 
 	public static void main(String[] args) {
@@ -39,7 +40,7 @@ public class Aims {
 		cart.addDVD(dvd_9);
 		cart.addDVD(dvd_10);
 		cart.addDVD(dvd_11);
-		cart.addDVD(dvd_12);
+		/*cart.addDVD(dvd_12);
 		cart.addDVD(dvd_13);
 		cart.addDVD(dvd_14);
 		cart.addDVD(dvd_15);
@@ -47,21 +48,19 @@ public class Aims {
 		cart.addDVD(dvd_17);
 		cart.addDVD(dvd_18);
 		cart.addDVD(dvd_19);
-		cart.addDVD(dvd_20); 
+		cart.addDVD(dvd_20);*/ 
 
 		// In ra thông báo khi add đĩa và xem trong đĩa
 		cart.calculateTotalCost();
 		cart.print();
 		
-		
 		//Xóa 1 DVD và in lại danh sách 
-		cart.removeDVD(dvd_2);
+		/*cart.removeDVD(dvd_2);
 		cart.calculateTotalCost();
-		cart.print(); 
-		
+		cart.print();*/ 
 		
 		// Thêm lại đĩa 
-		cart.addDVD(dvd_2);
+		//cart.addDVD(dvd_2);
 		
 		// Khi add thêm 1 đĩa vào Cart khi đầy 
 		cart.addDVD(dvd_21);
@@ -73,6 +72,14 @@ public class Aims {
 		
 		// Xóa DVD khi rỗng 
 		//cart.removeDVD(dvd_1);
+		
+		//Test hàm thêm 2 đĩa 
+		cart.addDVD(dvd_16, dvd_17);
+		cart.print();
+		
+		//Test hàm thêm một mảng hoặc các danh sách đĩa 
+		cart.addDVD(dvd_15,dvd_18,dvd_19,dvd_20);
+		cart.print();
 	}
 
 }

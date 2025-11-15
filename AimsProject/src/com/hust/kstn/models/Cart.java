@@ -5,7 +5,6 @@ public class Cart {
 	private int quantityOrder=0;
 	private static final int MAX_NUMBER_ORDERED =20;
 	
-	// Add DVD to the Cart
 	public void addDVD(DigitalVideoDisc disc) {
 		if(quantityOrder < MAX_NUMBER_ORDERED) {
 			itemsInCart[quantityOrder++]=disc;
@@ -15,8 +14,21 @@ public class Cart {
 			System.out.println("The cart is almost full");
 		}
 	}
-	
-	// Remove DVD from the Cart
+	public void addDVD(DigitalVideoDisc disc1, DigitalVideoDisc disc2 ) {
+		addDVD(disc1);
+		addDVD(disc2);
+	}
+	/*public void addDVD(DigitalVideoDisc[] discs) {
+		if (discs == null) return ;
+		for(DigitalVideoDisc disc : discs) {
+			addDVD(disc);
+		}
+	} */
+	public void addDVD(DigitalVideoDisc... discs) {
+		for(DigitalVideoDisc disc : discs) {
+			addDVD(disc);
+		}
+	}
 	public void removeDVD(DigitalVideoDisc disc) {
 		if (quantityOrder<=0) {
 			System.out.println("The cart is empty");
@@ -43,7 +55,6 @@ public class Cart {
 		
 	}
 	
-	//Caculate Cost
 	public double calculateTotalCost() {
 	    double totalCost = 0;
 	    for (int i = 0; i < quantityOrder; i++) {
@@ -53,7 +64,6 @@ public class Cart {
 	}
 
 	
-	// Print Cart
 	public void print() {
 	    System.out.println("===Total items in Cart : " + quantityOrder + "===");
 	    System.out.println("===All items in Cart ===");
