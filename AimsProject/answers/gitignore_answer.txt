@@ -1,0 +1,23 @@
+Câu 1 : Tại sao các đường dẫn Eclipse nên được thêm vào .gitignore?
+-Các tệp tin .settings/, .project, và .classpath là tệp tin cấu hình cá nhân của IDE Eclipse. Chúng thường khác nhau giữa các máy tính và nếu đưa lên Git sẽ gây ra xung đột khi làm việc nhóm, đồng thời ràng buộc project với một IDE cụ thể.
+
+-Thư mục bin/ chứa các tệp tin đã được biên dịch (.class) từ mã nguồn Java. Đây là tệp tin tự động sinh ra và không cần được theo dõi trong Git, việc commit chúng làm kho lưu trữ bị nặng.
+
+-Ngoài ra còn có thư mục metadata cũng được đưa vào gitignore ở bên ngoài  ngang hàng với AimsProject , OtherProject
+
+Câu 2 : Nếu dùng IntelliJ IDEA hoặc VSCode, đường dẫn nào sẽ được thêm vào?
+-Các đường dẫn cần thêm vào .gitignore khi dùng IDE khác bao gồm:
+
+-IntelliJ IDEA: Thư mục .idea/ và các tệp tin *.iml.
+
+
+-VSCode/Công cụ Build khác: Thư mục chứa tệp tin biên dịch (ví dụ: out/ hoặc target/).
+
+Câu 3 : Thao tác khi lỡ commit file tạm lên Git
+Để Git ngừng theo dõi file đã commit mà không xóa file đó khỏi máy, cần thực hiện các thao tác:
+
+Thêm đường dẫn của file/thư mục vào .gitignore.
+
+Chạy lệnh để xóa file khỏi chỉ mục Git: git rm --cached <đường_dẫn_của_file_hoặc_thư_mục>.
+
+Tạo commit để ghi lại sự thay đổi này và đẩy lên GitHub.
