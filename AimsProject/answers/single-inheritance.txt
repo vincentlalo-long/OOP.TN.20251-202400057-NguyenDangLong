@@ -1,0 +1,12 @@
+Java chỉ hỗ trợ đơn kế thừa (Single Inheritance), nghĩa là một lớp chỉ có thể kế thừa duy nhất một lớp cha trực tiếp. Quyết định thiết kế này nhằm mục đích giải quyết một vấn đề phức tạp được gọi là Vấn đề Kim cương (Diamond Problem), thường xảy ra trong các ngôn ngữ hỗ trợ đa kế thừa như C++.
+1. Vấn đề Kim cương (Diamond Problem)
+Vấn đề Kim cương xảy ra khi một lớp con (D) kế thừa từ hai lớp cha (B và C), mà cả hai lớp cha này lại cùng kế thừa từ một lớp gốc (A).
+Lớp A có một phương thức methodX().
+Lớp B và C (cùng kế thừa A) ghi đè (override) methodX().
+Lớp D kế thừa cả B và C.
+Vấn đề: Khi bạn tạo một đối tượng của lớp D và gọi methodX(), Java (hoặc ngôn ngữ lập trình) sẽ không thể quyết định một cách rõ ràng nên gọi phiên bản methodX() của lớp B hay lớp C.
+2. Giải pháp của Java
+Để tránh sự mơ hồ và phức tạp này, Java đã đưa ra hai giải pháp:
+Đơn Kế Thừa cho Lớp (Classes): Bắt buộc một lớp chỉ có thể kế thừa một lớp cha, loại bỏ hoàn toàn Vấn đề Kim cương.
+Đa Kế Thừa cho Giao diện (Interfaces): Java cho phép một lớp triển khai (implements) nhiều giao diện. Vì giao diện chỉ định nghĩa các hợp đồng (chỉ có các phương thức trừu tượng, không có phần cài đặt/implementation), không có sự xung đột về mã nguồn (code logic) xảy ra.
+Tóm lại: Java ưu tiên sự đơn giản, tính ổn định và an toàn của mã nguồn hơn sự linh hoạt của đa kế thừa, giải quyết vấn đề bằng cách sử dụng Giao diện.
