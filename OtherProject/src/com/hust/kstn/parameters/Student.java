@@ -20,4 +20,7 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
+    public void setStudentId(int studentId) {
+    	this.studentId=studentId;
+    }
 }
