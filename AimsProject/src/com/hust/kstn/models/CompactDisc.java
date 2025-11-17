@@ -1,10 +1,7 @@
 package com.hust.kstn.models;
 
-public class CompactDisc {
-    private int id;
-    private String title;
-    private String category;
-    private double cost;
+public class CompactDisc extends Disc {
+ 
     private String[] artist; 
     private String[] director;
     private Track[] tracks = new Track[MAX_TRACK]; 
@@ -14,9 +11,7 @@ public class CompactDisc {
     private int trackCount = 0; 
     
     public CompactDisc(String title, String category, double cost, String[] artist, String[] director, Track[] tracks) {
-        this.title = title;
-        this.category = category;
-        this.cost = cost;
+        super(title , category, cost);
         this.artist = new String[artist.length];
         for(int i=0;i<artist.length;i++) {
         	this.artist[i]=artist[i];
@@ -26,9 +21,6 @@ public class CompactDisc {
         for(int i=0;i<director.length;i++) {
         	this.director[i]=director[i];
         }
-
-        numberCD++;
-        this.id = numberCD;
         
         if (tracks != null) {
             int numberTrackLimit = Math.min(tracks.length, MAX_TRACK);
@@ -89,31 +81,12 @@ public class CompactDisc {
         } else {
             directorString += "N/A";
         }
-        return "CompactDisc [" + this.id + "]["
-            + this.title + "]["
-            + this.cost + "]["
-            + this.category + "]"
+        return "CompactDisc [" + super.toString()+ "]"
             + "\n" + artistString
             + "\n" + directorString
             + "\nTotal Length: " + this.totalLength() + " seconds"
             + "\n" + tracksString;
     }
-
-	public int getId() {
-		return id;
-	}
-
-	public String getTitle() {
-		return title;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public double getCost() {
-		return cost;
-	}
 
 	public String[] getArtist() {
 		return artist;
