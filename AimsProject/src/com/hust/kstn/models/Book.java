@@ -10,7 +10,7 @@ public class Book {
 	private static int numBook=0;
 	private BookAuthor[] authors =new BookAuthor[MAX_AUTHORS] ;
 	private static final int MAX_AUTHORS=50;
-	private int authorsCount =0;
+	private int authorsCount;
 	
 	
 	public Book(String title , String category, double cost, int numTokens ,BookAuthor[] authors) {
@@ -20,8 +20,8 @@ public class Book {
 		this.numTokens=numTokens;
 		numBook++;
 		this.id=numBook;
-		if(this.authors!=null) {
-			int numberLimitAuthor = Math.min(this.authors.length, MAX_AUTHORS);
+		if(authors!=null) {
+			int numberLimitAuthor = Math.min(authors.length, MAX_AUTHORS);
 			for (int i=0;i<numberLimitAuthor;i++) {
 				this.authors[i] = authors[i];
 			}
@@ -61,13 +61,16 @@ public class Book {
 		return numBook;
 	}
 	
+	public int getAuthorCount() {
+		return authorsCount;
+	}
 	@Override
 	public String toString() {
 	    String authorsString = "";
 	    
-	    if (this.authors != null && this.authors.length > 0) {
+	    if (this.authors != null && this.authorsCount > 0) {
 	        authorsString = "Authors:\n";
-	        for (int i = 0; i < this.authors.length; i++) {
+	        for (int i = 0; i < this.authorsCount; i++) {
 	            authorsString += "\t" + (i + 1) + ". " + this.authors[i].toString(); 
 	        }
 	    } else {
