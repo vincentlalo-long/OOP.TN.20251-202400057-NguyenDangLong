@@ -18,7 +18,7 @@ public class BookTest {
         System.out.println("\n=== TEST CASE 1: Single Author Book ===");
         System.out.println("Book ID: " + book1.getId());
         System.out.println("Total Books Created: " + book1.getNumBook()); 
-        System.out.println("Book Details (using toString()):");
+        System.out.println("Book Details:");
         System.out.println(book1.toString()); 
         
         BookAuthor[] multipleAuthors = {aoyama, takahashi, murakami};
@@ -27,7 +27,7 @@ public class BookTest {
         System.out.println("\n=== TEST CASE 2: Multiple Authors Book ===");
         System.out.println("Book ID: " + book2.getId());
         System.out.println("Total Books Created: " + book2.getNumBook()); 
-        System.out.println("Book Details (using toString()):");
+        System.out.println("Book Details :");
         System.out.println(book2.toString()); 
         
         BookAuthor[] noAuthor = {};
@@ -36,7 +36,7 @@ public class BookTest {
         System.out.println("\n=== TEST CASE 3: No Author Book ===");
         System.out.println("Book ID: " + book3.getId());
         System.out.println("Total Books Created: " + book3.getNumBook()); 
-        System.out.println("Book Details (using toString()):");
+        System.out.println("Book Details:");
         System.out.println(book3.toString()); 
     }
 }
