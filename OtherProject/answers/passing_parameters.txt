@@ -1,0 +1,14 @@
+Câu 1 : 
+Tại sao sau khi chạy phương thức swap(s1,s2) thì tên của hai học sinh vẫn không
+thay đổi? Từ đó, Java là ngôn ngữ truyền tham trị hay truyền tham chiếu?
+
+Khi truyền đối tượng (s1, s2), Java tạo và truyền bản sao của các giá trị tham chiếu (địa chỉ bộ nhớ trên Stack) vào hàm swap.
+Việc gán o1 = o2 bên trong hàm chỉ tráo đổi các tham chiếu cục bộ (o1, o2) trên Stack của hàm swap. Nó không ảnh hưởng đến các tham chiếu gốc (s1, s2) bên ngoài hàm.
+
+Từ đó Java là ngôn ngữ truyền tham trị .
+
+Câu 2 : 
+Bạn làm thế nào để phương thức swap hoạt động (thật sự tráo đổi thông tin của hai
+đối tượng được truyền vào)?
+-Thay đổi nội dung  của đối tượng trên vùng nhớ Heap, chứ không phải tráo đổi các biến tham chiếu.
+Giải pháp: Viết lại hàm swap để tráo đổi tất cả các thuộc tính (studentId, name) giữa hai đối tượng, thay vì tráo đổi các tham chiếu đối tượng.
